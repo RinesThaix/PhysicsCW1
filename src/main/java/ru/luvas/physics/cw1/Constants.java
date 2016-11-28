@@ -24,6 +24,8 @@ public class Constants {
             GRAPHICS_DEFAULT_LIGHT_LINE_DELTA = 15;
     
     public final static double
-            PHYSICS_DEFAULT_DISTANCE_BETWEEN_HOLES = 8.5f * Math.pow(10, -5);
+            PHYSICS_DEFAULT_DISTANCE_BETWEEN_HOLES = 8.5f * Math.pow(10, -5),
+            PHYSICS_LIGHT_WAVE_LENGTH_MIN = 350,
+            PHYSICS_LIGHT_WAVE_LENGTH_MAX = 850;
     
 }

@@ -50,7 +50,7 @@ public class FormulaWorker {
         
         Utils.schedule(() -> {
 //            PHYSICS_DISTANCE_BETWEEN_HOLES += 1d * Math.pow(10, -5);
-            changeLight(currentLightWave += 50);
+            changeLight(currentLightWave += 10);
             recalculate();
         }, 1, 1, TimeUnit.SECONDS);
     }
@@ -84,7 +84,7 @@ public class FormulaWorker {
     
     public void changeLight(int newWaveLenght) {
         //changing color
-        lightColor = Color.red;
+        lightColor = ColoursMapping.getClosestColor(newWaveLenght);
         //changing radiuses
         GRAPHICS_FIRST_CIRCLE_RADIUS = GRAPHICS_DEFAULT_FIRST_CIRCLE_RADIUS * newWaveLenght / PHYSICS_DEFAULT_LIGHT_WAVE_LENGTH;
         //changing line deltas

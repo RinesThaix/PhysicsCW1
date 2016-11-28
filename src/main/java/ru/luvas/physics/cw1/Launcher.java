@@ -12,4 +12,25 @@ public class Launcher {
         EventQueue.invokeLater(() -> new MainFrame());
     }
     
+    private static String getImplVersion() {
+        String version = Launcher.class.getPackage().getImplementationVersion();
+        if(version == null)
+            return "unknown";
+        return version;
+    }
+    
+    public static String getCommitId() {
+        String version = getImplVersion();
+        if(version.equals("unknown"))
+            return version;
+        return version.split("\\-")[0];
+    }
+    
+    public static String getCommitDate() {
+        String version = getImplVersion();
+        if(version.equals("unknown"))
+            return "";
+        return version.split("\\-")[1];
+    }
+    
 }
