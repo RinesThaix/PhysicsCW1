@@ -10,6 +10,7 @@ import ru.luvas.physics.cw1.MainFrame;
 public abstract class Entity {
 
     protected int x, y;
+    protected boolean active = true;
     
     Entity(int x, int y) {
         this.x = x;
@@ -41,6 +42,14 @@ public abstract class Entity {
     
     public void remove() {
         MainFrame.getInstance().getEntityManager().removeEntity(this);
+    }
+    
+    public void setActive(boolean value) {
+        this.active = value;
+    }
+    
+    public boolean isActive() {
+        return active;
     }
     
     public abstract void draw(Graphics2D g);

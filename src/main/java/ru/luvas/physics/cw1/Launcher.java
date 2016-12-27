@@ -12,6 +12,14 @@ public class Launcher {
         EventQueue.invokeLater(() -> new MainFrame());
     }
     
+    public static void log(Object o) {
+        System.out.println(o);
+    }
+    
+    public static void log(String s, Object... args) {
+        log(String.format(s, args));
+    }
+    
     private static String getImplVersion() {
         String version = Launcher.class.getPackage().getImplementationVersion();
         if(version == null)

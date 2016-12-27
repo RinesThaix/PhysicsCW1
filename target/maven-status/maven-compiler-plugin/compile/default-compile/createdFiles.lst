@@ -1,12 +1,16 @@
+ru/luvas/physics/cw1/ColoursMapping$1.class
 ru/luvas/physics/cw1/entity/FilledOval.class
 ru/luvas/physics/cw1/entity/Oval.class
 ru/luvas/physics/cw1/Constants.class
 ru/luvas/physics/cw1/entity/SemiCircle.class
+ru/luvas/physics/cw1/custom/Point.class
 ru/luvas/physics/cw1/entity/Colored.class
+ru/luvas/physics/cw1/ColoursMapping.class
 ru/luvas/physics/cw1/Utils.class
 ru/luvas/physics/cw1/entity/EntityManager.class
 ru/luvas/physics/cw1/entity/Line.class
 ru/luvas/physics/cw1/entity/FilledRectangle.class
+ru/luvas/physics/cw1/IntensivityCalculator.class
 ru/luvas/physics/cw1/entity/Rectangle.class
 ru/luvas/physics/cw1/FormulaWorker.class
 ru/luvas/physics/cw1/MainFrame.class
@@ -14,3 +18,4 @@ ru/luvas/physics/cw1/Dynamics.class
 ru/luvas/physics/cw1/Launcher.class
 ru/luvas/physics/cw1/entity/ColoredSizable.class
 ru/luvas/physics/cw1/entity/Entity.class
+ru/luvas/physics/cw1/entity/GradientRectangle.class

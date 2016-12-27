@@ -1,8 +1,9 @@
 package ru.luvas.physics.cw1.entity;
 
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.stream.Collectors;
 import ru.luvas.physics.cw1.MainFrame;
 
 /**
@@ -21,17 +22,29 @@ public class EntityManager {
     }
     
     void addEntity(Entity entity) {
-        entities.add(entity);
+        synchronized(entities) {
+            entities.add(entity);
+        }
         updated = true;
     }
     
     void removeEntity(Entity entity) {
-        entities.remove(entity);
+        synchronized(entities) {
+            entities.remove(entity);
+        }
         updated = true;
     }
     
     public List<Entity> getEntities() {
-        return entities;
+        synchronized(entities) {
+            return new ArrayList<>(this.entities);
+        }
+    }
+    
+    public List<Entity> getActiveEntities() {
+        synchronized(entities) {
+            return entities.stream().filter(Entity::isActive).collect(Collectors.toList());
+        }
     }
     
     public void redraw() {
@@ -39,6 +52,12 @@ public class EntityManager {
             return;
         updated = false;
         frame.repaint();
+    }
+    
+    public void redraw0(Graphics2D g) {
+        synchronized(entities) {
+            entities.stream().filter(Entity::isActive).forEach(e -> e.draw(g));
+        }
     }
     
 }
